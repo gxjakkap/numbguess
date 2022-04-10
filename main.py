@@ -153,7 +153,7 @@ def gameloop() -> None:
     # mode selection
     print("========== Choose game mode =========")
     print("== 1. Singleplayer                 ==")
-    print("== 2. Miltiplayer                  ==")
+    print("== 2. Multiplayer                  ==")
     print("== 3. Guess until right            ==")
     print("=====================================")
     mode = int(input("Which mode you gonna play in?: ")) or 1
