@@ -13,6 +13,7 @@ start = {script = "main:main"}
 python = ">=3.8,<3.11"
 pyinstaller = "^4.10"
 requests = "^2.27.1"
+toml = "^0.10.2"
 
 
 [build-system]
