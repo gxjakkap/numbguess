@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "numbguess"
+version = "0.1.0"
+description = "Simple guessing game"
+authors = ["Jakkaphat <gunt@guntxjakka.me>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+pyinstaller = "^4.10"
+requests = "^2.27.1"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
