@@ -7,6 +7,7 @@ license = "MIT"
 
 [tool.poe.tasks]
 build = {script = "build:main"}
+start = {script = "main:main"}
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"

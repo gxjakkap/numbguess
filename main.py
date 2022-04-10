@@ -139,7 +139,7 @@ def guessuntilright(ans: int) -> None:
     return  # return to main function
 
 
-def main() -> None:
+def gameloop() -> None:
     # clear terminal screen and print out title
     os.system('cls' if os.name == 'nt' else 'clear')
     print("======= Number Guessing Game ========")
@@ -189,6 +189,10 @@ def main() -> None:
         quit()
 
 
-if __name__ == "__main__":
+def main() -> None:  # main process
     while(True):  # endless loop
-        main()
+        gameloop()
+
+
+if __name__ == "__main__":
+    main()
