@@ -98,8 +98,6 @@ def guessuntilright(ans: int) -> None:
         i += 1
         # gather player's guess
         playerinput = input("Enter your guess: ")
-        # push player's guess to the list
-        guesses.append(playerinput)
         # allow player to chicken out
         if playerinput == "ff":
             guesses.append("ff")
@@ -110,6 +108,8 @@ def guessuntilright(ans: int) -> None:
                 f"'You tried for {i} {tot} and you can't guess the number {ans}.'")
             recap(i)
             return
+        # push player's guess to the list
+        guesses.append(playerinput)
         # try to convert input to int
         try:
             playerinput = int(playerinput)
@@ -117,6 +117,7 @@ def guessuntilright(ans: int) -> None:
             pass  # pass to let below if deal with it
         # check for invalid value
         if playerinput == "" or not isinstance(playerinput, int) or 0 > playerinput or 100 < playerinput:
+            diffs.append("INVAL")
             print("Invalid Value!")
             continue  # continue at the start of the loop
         # calculate player's diff
