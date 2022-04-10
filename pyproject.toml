@@ -1,9 +1,12 @@
 [tool.poetry]
 name = "numbguess"
 version = "0.1.0"
-description = "Simple guessing game"
+description = "Simple number guessing game"
 authors = ["Jakkaphat <gunt@guntxjakka.me>"]
 license = "MIT"
+
+[tool.poe.tasks]
+build = {script = "build:main"}
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
@@ -12,5 +15,5 @@ requests = "^2.27.1"
 
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.1.0a7"]
 build-backend = "poetry.core.masonry.api"
