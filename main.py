@@ -86,13 +86,10 @@ def guessuntilright(ans: int) -> None:
         for i in range(t):
             print(f"{i+1}. Guessed: {guesses[i]} Diff: {diffs[i]}")
     print("Rules: Guess until you get the number right.")
-
-    print(3)
-    sleep(1)
-    print(2)
-    sleep(1)
-    print(1)
-    sleep(1)
+    i = 3
+    while i > 0:  # print a countdown from 3
+        print(i)
+        sleep(1)
     print("Go!")
     i = 0
     guesses = []
