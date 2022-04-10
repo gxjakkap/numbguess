@@ -34,4 +34,4 @@ Assuming you already install Poetry and stuff, you can build from source with
 
 ## License
 
-[MIT License](https://github.com/gxjakkap/numbguess/blob/main/LICENSE)
+[MIT License](https://github.com/gxjakkap/numbguess/blob/main/LICENSE.md)
