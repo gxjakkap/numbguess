@@ -90,6 +90,7 @@ def guessuntilright(ans: int) -> None:
     while i > 0:  # print a countdown from 3
         print(i)
         sleep(1)
+        i -= 1
     print("Go!")
     i = 0
     guesses = []
