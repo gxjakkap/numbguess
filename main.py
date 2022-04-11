@@ -96,9 +96,9 @@ def guessuntilright(ans: int) -> None:
         playTime = endTime - startTime
         playtimeInMin = playTime / 60
         if playtimeInMin < 1:
-            return f"{playTime}s"
+            return f"{round(playTime, 2)} {'seconds' if playTime > 1 else 'second'}"
         else:
-            return f"{playtimeInMin}m"
+            return f"{round(playtimeInMin, 2)} {'minutes' if playtimeInMin > 1 else 'minute'}"
     # clear terminal screen and print out title
     os.system('cls' if os.name == 'nt' else 'clear')
     print("========= Guess until right =========")
