@@ -11,7 +11,7 @@ def main() -> None:
         'main.py',
         '--onefile',
         '--console',
-        f'--name=numbguess-{ver}-{platform.uname().system}',
+        f'--name=numbguess-{ver}-{platform.uname().system.lower()}',
         '-p /gamemode/*.py'
     ])
 
