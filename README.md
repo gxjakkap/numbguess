@@ -10,6 +10,7 @@ I just felt too bored to do nothing, and too lazy to do anything complicated. So
 
 You can get the compiled binary file on the release page or you can run with the interpreter.
 
+
 ### Running with interpreter
 
 This project use Poetry 1.2, which could be install with
@@ -22,15 +23,17 @@ Then install required dependencies.
 
 After that, you can run
 
-`$ poe start`
+`$ poe start` (if this doesn't work, run `$ poetry plugin add poethepoet` first.)
 
 or if you want to go the easy path, just run `$ python3 main.py`
+
 
 ### Building from source
 
 Assuming you already install Poetry and stuff, you can build from source with
 
 `$ poe build`
+
 
 ## License
 
