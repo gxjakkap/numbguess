@@ -15,6 +15,8 @@ def strtobool(message: str) -> bool:  # take y/n string and returns boolean valu
 
 
 def singleplayer(ans: int) -> None:
+    # clear terminal screen and print out title
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("=========== Singleplayer ============")
 
     # gather player's guess
@@ -35,6 +37,8 @@ def singleplayer(ans: int) -> None:
 
 
 def multiplayer(ans: int, playercount: int) -> None:
+    # clear terminal screen and print out title
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("============ Multiplayer ============")
     # create list to store data
     pans = []
@@ -94,6 +98,8 @@ def guessuntilright(ans: int) -> None:
             return f"{playTime}s"
         else:
             return f"{playtimeInMin}m"
+    # clear terminal screen and print out title
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("========= Guess until right =========")
     print("Rules: Guess until you get the number right.")
     i = 3
