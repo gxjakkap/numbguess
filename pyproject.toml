@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "numbguess"
-version = "0.3.0-beta.0"
+version = "0.3.0"
 description = "Simple number guessing game"
 authors = ["Jakkaphat <gunt@guntxjakka.me>"]
 license = "MIT"
