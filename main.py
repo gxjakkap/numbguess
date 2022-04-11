@@ -1,5 +1,5 @@
 import os
-from time import sleep
+from time import sleep, time
 import requests
 
 
@@ -36,7 +36,6 @@ def singleplayer(ans: int) -> None:
 
 def multiplayer(ans: int, playercount: int) -> None:
     print("============ Multiplayer ============")
-
     # create list to store data
     pans = []
     pdiff = []
@@ -81,10 +80,21 @@ def multiplayer(ans: int, playercount: int) -> None:
 
 
 def guessuntilright(ans: int) -> None:
+    # print out recap
     def recap(t: int) -> None:
         print("\n=============== Recap ===============")
         for i in range(t):
             print(f"{i+1}. Guessed: {guesses[i]} Diff: {diffs[i]}")
+    # calculate playtime and determine if it should be displayed in seconds or minutes
+
+    def playtimeDisplay(st, et):
+        playTime = endTime - startTime
+        playtimeInMin = playTime / 60
+        if playtimeInMin < 1:
+            return f"{playTime}s"
+        else:
+            return f"{playtimeInMin}m"
+    print("========= Guess until right =========")
     print("Rules: Guess until you get the number right.")
     i = 3
     while i > 0:  # print a countdown from 3
@@ -92,6 +102,7 @@ def guessuntilright(ans: int) -> None:
         sleep(1)
         i -= 1
     print("Go!")
+    startTime = time()
     i = 0
     guesses = []
     diffs = []
@@ -103,10 +114,11 @@ def guessuntilright(ans: int) -> None:
         if playerinput == "ff":
             guesses.append("ff")
             diffs.append("ff")
+            endTime = time()
             print("\n============== Results ==============")
             tot = "times" if i > 1 else "time"  # just to get the grammar right
             print(
-                f"'You tried for {i} {tot} and you can't guess the number {ans}.'")
+                f"'You tried for {i} {tot}, took {playtimeDisplay(startTime, endTime)} and you can't guess the number {ans}.'")
             recap(i)
             return
         # push player's guess to the list
@@ -126,6 +138,7 @@ def guessuntilright(ans: int) -> None:
         # check if player wins or not
         if diff == 0:  # wins
             diffs.append(f'{diff} Win!')
+            endTime = time()
             break
         else:
             diffs.append(diff)
@@ -133,7 +146,8 @@ def guessuntilright(ans: int) -> None:
     # print out results
     print("\n============== Results ==============")
     tot = "tries" if i > 1 else "try"  # just to get the grammar right
-    print(f"It took you {i} {tot} to guess the number {ans}")
+    print(
+        f"It took you {i} {tot} in {playtimeDisplay(startTime, endTime)} to guess the number {ans}")
     recap(i)
     return  # return to main function
 
