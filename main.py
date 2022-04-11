@@ -1,4 +1,5 @@
 import os
+import sys
 from time import sleep, time
 import requests
 
@@ -179,7 +180,7 @@ def gameloop() -> None:
 
     if mode < 1 and mode > 3:  # invalid value
         print("Invalid mode.")
-        quit()
+        sys.exit(0)
 
     elif mode == 1:  # singleplayer mode
         singleplayer(ans)
@@ -190,7 +191,7 @@ def gameloop() -> None:
             input("How many players is playing? (Limit: 5): "))
         if playercount <= 0:  # catch 0 or negative player input
             print("How the fuck are you playing with less than 1 player?")
-            quit()
+            sys.exit(0)
         elif playercount == 1:  # send 1 player input to singleplayer mode
             print("Then choose singleplayer you idiot.")
             singleplayer(ans)
@@ -198,14 +199,14 @@ def gameloop() -> None:
             multiplayer(ans, playercount)
         else:  # >5 players is not allowed. i just dont feel like it
             print("I said the limit is 5. I don't like you you have too many friends.")
-            quit()
+            sys.exit(0)
 
     else:  # guess until right
         guessuntilright(ans)
 
     # check if player wanna play again. if not then terminate process
     if not strtobool(str(input("Play again? [y/n]: "))):
-        quit()
+        sys.exit(0)
 
 
 def main() -> None:  # main process
