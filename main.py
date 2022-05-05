@@ -1,18 +1,20 @@
 import os
+import re
 import sys
 import requests
 import gamemode
 
 
 def strtobool(message: str) -> bool:  # take y/n string and returns boolean value
-    lm = message.lower()
-    if lm in ["y", "n"]:
-        if lm == "y":
-            return True
-        elif lm == "n":
-            return False
-    else:
+    x = re.findall('([^YyNn])', message)  # find all except YyNn
+    # catch other character than YyNn and string longer/shorter than 1
+    if x or 0 >= len(message) or len(message) > 1:
         return True  # default value always be y
+    lm = message.lower()
+    if lm == "y":
+        return True
+    elif lm == "n":
+        return False
 
 
 def gameloop() -> None:
@@ -61,7 +63,7 @@ def gameloop() -> None:
         gamemode.guessuntilright(ans)
 
     # check if player wanna play again. if not then terminate process
-    if not strtobool(str(input("Play again? [y/n]: "))):
+    if not strtobool(str(input("Play again? [y/n](default: y): "))):
         sys.exit(0)
 
 
