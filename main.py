@@ -36,7 +36,7 @@ def gameloop() -> None:
     print("=====================================")
     mode = int(input("Which mode you gonna play in?: ")) or 1
 
-    if mode < 1 and mode > 3:  # invalid value
+    if mode < 1 or mode > 3:  # invalid value
         print("Invalid mode.")
         sys.exit(0)
 
